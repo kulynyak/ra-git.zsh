@@ -6,7 +6,7 @@ alias gvm="git status --porcelain 2>/dev/null | sed -ne 's/^ M //p' | xargs vi"
 ## aliases
 
 # gl - git commit browser
-# unalias gl
+unalias gl 2>/dev/null
 gl() {
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
