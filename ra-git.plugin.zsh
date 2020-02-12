@@ -57,8 +57,6 @@ fbx() {
   stashName=$(git stash list | grep -m 1 "On ${nBranchName}: ==${nBranchName}" | sed -E "s/(stash@\{.*\}): .*/\1/g")
   [[ -n "${stashName}" ]] && git stash apply "${stashName}"
   zle reset-prompt
-  echo "Done"
-  return
 }
 zle     -N fbx
 bindkey '^x^b' fbx
@@ -79,8 +77,6 @@ fb() {
       git checkout $(echo "$branch" | sed "s/.* //")
   fi
   zle reset-prompt
-  echo "Done"
-  return
 }
 zle     -N fb
 bindkey '^x^g' fb
